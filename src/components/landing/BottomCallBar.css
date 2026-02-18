@@ -1,0 +1,57 @@
+.bottom-call-bar {
+  background: #f4f6f8;
+  padding: 10px 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.bottom-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom-logo img {
+  height: 70px;  
+  width: auto;
+  display: block;
+   line-height: 0;
+}
+
+
+.bottom-contact {
+  text-align: right;
+}
+
+.call-text {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.phone-number {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.phone-number:hover {
+  color: #ff7a00;
+}
+.bottom-section {
+  background: #ffffff;
+  padding: 20px 40px;   /* reduce this if too much gap */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom-logo img {
+  height: 90px;      /* good visible size */
+  width: auto;
+  display: block;
+}
