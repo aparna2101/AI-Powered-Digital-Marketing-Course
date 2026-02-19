@@ -21,27 +21,34 @@ router.post("/submit", async (req, res) => {
 
   // ===== EMAIL TEMPORARILY DISABLED =====
 
-// const transporter = nodemailer.createTransport({
-//   service: "gmail",
-//   auth: {
-//     user: process.env.EMAIL_USER,
-//     pass: process.env.EMAIL_PASS,
-//   },
-// });
+const transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false,
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+});
 
-// await transporter.sendMail({
-//   from: process.env.EMAIL_USER,
-//   to: process.env.EMAIL_USER,
-//   subject: "New Course Lead 🚀",
-//   html: `
-//     <h2>New Lead Received</h2>
-//     <p><strong>Name:</strong> ${name}</p>
-//     <p><strong>Email:</strong> ${email}</p>
-//     <p><strong>Phone:</strong> ${phone}</p>
-//     <p><strong>Working Status:</strong> ${workingStatus}</p>
-//     <p><strong>Preferred Time:</strong> ${preferredTime}</p>
-//   `,
-// });
+try {
+  await transporter.sendMail({
+    from: process.env.EMAIL_USER,
+    to: process.env.EMAIL_USER,
+    subject: "New Course Lead 🚀",
+    html: `
+      <h2>New Lead Received</h2>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
+      <p><strong>Working Status:</strong> ${workingStatus}</p>
+      <p><strong>Preferred Time:</strong> ${preferredTime}</p>
+    `,
+  });
+  console.log("Email sent successfully");
+} catch (mailError) {
+  console.log("Email failed:", mailError.message);
+}
 
 
     res.status(200).json({ message: "Lead submitted successfully" });
