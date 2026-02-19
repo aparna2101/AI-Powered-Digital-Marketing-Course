@@ -31,24 +31,21 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-try {
-  await transporter.sendMail({
-    from: process.env.EMAIL_USER,
-    to: process.env.EMAIL_USER,
-    subject: "New Course Lead 🚀",
-    html: `
-      <h2>New Lead Received</h2>
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Phone:</strong> ${phone}</p>
-      <p><strong>Working Status:</strong> ${workingStatus}</p>
-      <p><strong>Preferred Time:</strong> ${preferredTime}</p>
-    `,
-  });
-  console.log("Email sent successfully");
-} catch (mailError) {
-  console.log("Email failed:", mailError.message);
-}
+transporter.sendMail({
+  from: process.env.EMAIL_USER,
+  to: process.env.EMAIL_USER,
+  subject: "New Course Lead 🚀",
+  html: `
+    <h2>New Lead Received</h2>
+    <p><strong>Name:</strong> ${name}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Phone:</strong> ${phone}</p>
+    <p><strong>Working Status:</strong> ${workingStatus}</p>
+    <p><strong>Preferred Time:</strong> ${preferredTime}</p>
+  `,
+})
+.then(() => console.log("Email sent"))
+.catch(err => console.log("Email failed:", err.message));
 
 
     res.status(200).json({ message: "Lead submitted successfully" });
