@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const Lead = require("../models/Lead");
 const nodemailer = require("nodemailer");
+const SibApiV3Sdk = require("sib-api-v3-sdk");
+
 
 // ✅ POST Route
 router.post("/submit", async (req, res) => {
@@ -19,24 +21,17 @@ router.post("/submit", async (req, res) => {
 
     await newLead.save();
 
-  // ===== EMAIL TEMPORARILY DISABLED =====
+const defaultClient = SibApiV3Sdk.ApiClient.instance;
+const apiKey = defaultClient.authentications["api-key"];
+apiKey.apiKey = process.env.BREVO_SMTP_KEY;
 
-const transporter = nodemailer.createTransport({
-  host: "smtp-relay.brevo.com",
-  port: 587,
-  secure: false,
-  auth: {
-    user:  process.env.EMAIL_USER, // 👈 your Brevo login (from SMTP page)
-    pass: process.env.BREVO_SMTP_KEY, // 👈 we will add this in Render
-  },
-});
+const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 
-
-transporter.sendMail({
-  from: process.env.EMAIL_USER,
-  to: "aparnachaurasia210103@gmail.com",
+await apiInstance.sendTransacEmail({
+  sender: { email: "aparnachaurasia210103@gmail.com" },
+  to: [{ email: "aparnachaurasia210103@gmail.com" }],
   subject: "New Course Lead 🚀",
-  html: `
+  htmlContent: `
     <h2>New Lead Received</h2>
     <p><strong>Name:</strong> ${name}</p>
     <p><strong>Email:</strong> ${email}</p>
@@ -44,9 +39,7 @@ transporter.sendMail({
     <p><strong>Working Status:</strong> ${workingStatus}</p>
     <p><strong>Preferred Time:</strong> ${preferredTime}</p>
   `,
-})
-.then(() => console.log("Email sent"))
-.catch(err => console.log("Email failed:", err.message));
+});
 
 
     res.status(200).json({ message: "Lead submitted successfully" });
