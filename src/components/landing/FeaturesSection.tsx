@@ -25,7 +25,7 @@ const features = [
   {
     title: "100% Job Placement",
     desc: "Get career guidance, interview preparation, and placement support with top companies hiring AI marketers.",
-    icon: "/100%jobplacement.png",
+    icon: "/jobplacement.png",
     border: "border-orange-400",
     bg: "bg-orange-50",
   },
