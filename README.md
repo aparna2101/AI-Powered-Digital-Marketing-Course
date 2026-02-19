@@ -1,1 +1,1 @@
-This is Dizi Global Dolutions course page 
+This is Dizi Global Solutions course page 
