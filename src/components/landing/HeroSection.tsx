@@ -105,11 +105,14 @@ const HeroSection = () => {
       />
       <div className="absolute inset-0 bg-white/85" />
 
-      <div className="relative max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24 flex flex-col lg:flex-row items-center gap-12">
+<div className="relative max-w-7xl mx-auto px-5 sm:px-6 md:px-8 py-12 sm:py-16 md:py-24 flex flex-col lg:flex-row items-center gap-10 lg:gap-12">
+
 
         {/* LEFT */}
-        <div className="flex-1 text-black">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
+    <div className="flex-1 text-black w-full">
+
+<h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-5 sm:mb-6">
+
             Become Industry-Ready with{" "}
             <span className="text-primary">
               AI Powered Digital Marketing
@@ -117,7 +120,8 @@ const HeroSection = () => {
             Course
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl">
+<p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-full sm:max-w-xl">
+
             Master the latest AI-driven marketing strategies, tools, and
             techniques with hands-on training from industry experts.
           </p>
@@ -137,7 +141,8 @@ const HeroSection = () => {
     POWERFUL TOOLS & TECHNOLOGIES
   </p>
 
- <div className="bg-gray-100 rounded-xl py-4 px-6 overflow-hidden">
+<div className="bg-gray-100 rounded-xl py-4 px-4 sm:px-6 overflow-hidden w-full">
+
   <div className="slider-track flex gap-12 items-center">
     
     <img src={googleads} className="h-10 object-contain" />

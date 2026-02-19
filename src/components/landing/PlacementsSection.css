@@ -103,3 +103,49 @@
   border-radius: 10px;
   font-weight: 600;
 }
+
+
+/*  RESPONSIVE */
+
+@media (max-width: 1200px) {
+  .placements-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .placements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .placements-title {
+    font-size: 32px;
+  }
+
+  .placements-desc {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .placements-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .placements-section {
+    padding: 40px 20px;
+  }
+
+  .placements-title {
+    font-size: 26px;
+  }
+
+  .placements-desc {
+    font-size: 16px;
+  }
+
+  .student-img {
+    width: 90px;
+    height: 90px;
+  }
+}
