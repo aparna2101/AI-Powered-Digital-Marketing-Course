@@ -69,7 +69,7 @@ const HeroSection = () => {
     if (Object.keys(v).length === 0) {
       try {
         const response = await fetch(
-          "https://ai-digital-backend.onrender.com//api/leads/submit",
+          "https://ai-digital-backend.onrender.com/api/leads/submit",
           {
             method: "POST",
             headers: {
