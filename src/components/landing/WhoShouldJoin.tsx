@@ -54,34 +54,34 @@ const AboutSection = () => {
 
 
             </div>
+{/* RIGHT IMAGES */}
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:-mt-16">
 
-            {/* RIGHT IMAGES */}
-            <div className="grid grid-cols-2 gap-5 md:-mt-16">
+  {/* LEFT BIG IMAGE */}
+  <div className="sm:row-span-2">
+    <img
+      src="/image1.jpg"
+      alt="Dizi Award"
+      className="rounded-2xl object-cover w-full h-80 sm:h-full"
+    />
+  </div>
 
-              {/* LEFT BIG IMAGE */}
-              <div className="row-span-2">
-                <img
-                  src="/image1.jpg"
-                  alt="Dizi Award"
-                  className="rounded-2xl object-cover h-full w-full"
-                />
-              </div>
+  {/* TOP RIGHT IMAGE */}
+  <img
+    src="/image2.jpg"
+    alt="Dizi Certificate"
+    className="rounded-2xl object-cover w-full h-64"
+  />
 
-              {/* TOP RIGHT IMAGE */}
-              <img
-                src="/image2.jpg"
-                alt="Dizi Certificate"
-                className="rounded-2xl object-cover h-60 w-full"
-              />
+  {/* BOTTOM RIGHT IMAGE */}
+  <img
+    src="/image3.jpg"
+    alt="Dizi Recognition"
+    className="rounded-2xl object-cover w-full h-64"
+  />
 
-              {/* BOTTOM RIGHT IMAGE */}
-              <img
-                src="/image3.jpg"
-                alt="Dizi Recognition"
-                className="rounded-2xl object-cover h-60 w-full"
-              />
+</div>
 
-            </div>
 
           </div>
         </div>
