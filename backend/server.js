@@ -24,5 +24,5 @@ const transporter = nodemailer.createTransport({
 app.use("/api/leads", require("./routes/leadRoutes"));
 
 app.listen(5000, () => {
-  console.log("Server running on port 5000");
+ console.log(`Server running on port ${PORT}`);
 });
