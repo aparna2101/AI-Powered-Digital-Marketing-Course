@@ -22,18 +22,19 @@ router.post("/submit", async (req, res) => {
   // ===== EMAIL TEMPORARILY DISABLED =====
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
+  host: "smtp-relay.brevo.com",
   port: 587,
   secure: false,
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
+    user:  process.env.EMAIL_USER, // 👈 your Brevo login (from SMTP page)
+    pass: process.env.BREVO_SMTP_KEY, // 👈 we will add this in Render
   },
 });
 
+
 transporter.sendMail({
   from: process.env.EMAIL_USER,
-  to: process.env.EMAIL_USER,
+  to: "aparnachaurasia210103@gmail.com",
   subject: "New Course Lead 🚀",
   html: `
     <h2>New Lead Received</h2>
