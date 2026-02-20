@@ -10,6 +10,7 @@ import PlacementsSection from "@/components/landing/PlacementsSection";
 import GallerySection from "@/components/landing/GallerySection";
 import BottomCallBar from "@/components/landing/BottomCallBar";
 import CourseSection from "@/components/landing/CourseSection";
+import FloatingWhatsApp from "@/components/landing/FloatingWhatsApp";
 
 
 
@@ -29,6 +30,7 @@ const Index = () => {
       <PlacementsSection />
       <GallerySection />
       <BottomCallBar />
+      <FloatingWhatsApp />
 
       
      

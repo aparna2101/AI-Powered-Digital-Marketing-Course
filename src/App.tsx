@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import CourseSection from "./components/landing/CourseSection";
 import Success from "./pages/Success";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -19,6 +20,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
              <Route path="/success" element={<Success />} />
           <Route path="/" element={<CourseSection />} />
+          
 
           <Route path="*" element={<NotFound />} />
         </Routes>

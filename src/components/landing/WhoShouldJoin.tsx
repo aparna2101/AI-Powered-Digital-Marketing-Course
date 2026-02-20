@@ -10,7 +10,8 @@ const AboutSection = () => {
               ABOUT DIZI GLOBAL SOLUTION
             </p>
 
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-[1.2]">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-[1.2]"
+            style={{ lineHeight: "1.2" }}>
               Best{" "}
               <span className="text-orange-500">
                 AI Digital Marketing

@@ -22,6 +22,7 @@ import synthesia from "@/assets/synthesia.png";
 import googleadsense from "@/assets/googleadsense.png";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import { Typewriter } from "react-simple-typewriter";
 
 const highlights = [
   "Learn from Industry Experts with 10+ Years of Experience",
@@ -108,17 +109,39 @@ const HeroSection = () => {
 <div className="relative max-w-7xl mx-auto px-5 sm:px-6 md:px-8 py-12 sm:py-16 md:py-24 flex flex-col lg:flex-row items-center gap-10 lg:gap-12">
 
 
+
+
         {/* LEFT */}
     <div className="flex-1 text-black w-full">
 
-<h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-5 sm:mb-6">
 
-            Become Industry-Ready with{" "}
-            <span className="text-primary">
-              AI Powered Digital Marketing
-            </span>{" "}
-            Course
-          </h1>
+  {/* Typing Line */}
+<p className="font-semibold text-lg sm:text-xl mb-4 text-[#112D4E]">
+    <Typewriter
+      words={[
+        "Future-Ready AI Skills",
+        "Job-Oriented AI Training",
+        "100% Job Assistance"
+      ]}
+      loop={0}
+      cursor
+      cursorStyle="|"
+      typeSpeed={70}
+      deleteSpeed={40}
+      delaySpeed={1500}
+    />
+  </p>
+
+<h1
+  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6"
+  style={{ lineHeight: "1.3" }}
+>
+  Become Industry-Ready with{" "}
+  <span className="text-primary block">
+    AI Powered Digital Marketing
+  </span>
+  <span className="block">Course</span>
+</h1>
 
 <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-full sm:max-w-xl">
 
